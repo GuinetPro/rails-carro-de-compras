@@ -1,0 +1,11 @@
+<h1>Posts</h1>
+<ul class="list-group">
+  <% @posts.each do |post| %>
+    <li class="list-group-item">
+      <%= link_to post.title, post %>
+    </li>
+  <%end%>
+</ul>
+<% if usuario_signed_in? %>
+  <%= link_to 'Nuevo Post', new_post_path %>
+<%end%>
